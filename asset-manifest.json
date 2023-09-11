@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.1bbd5c96.css",
+    "main.css": "/quran/static/css/main.fb5a417f.css",
     "main.js": "/quran/static/js/main.cd851ae6.js",
     "static/media/quran-icon.png": "/quran/static/media/quran-icon.784356d4dad9722eb9d2.png",
     "index.html": "/quran/index.html",
-    "main.1bbd5c96.css.map": "/quran/static/css/main.1bbd5c96.css.map",
+    "main.fb5a417f.css.map": "/quran/static/css/main.fb5a417f.css.map",
     "main.cd851ae6.js.map": "/quran/static/js/main.cd851ae6.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bbd5c96.css",
+    "static/css/main.fb5a417f.css",
     "static/js/main.cd851ae6.js"
   ]
 }
