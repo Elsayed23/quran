@@ -1,14 +1,24 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.da9caea7.css",
-    "main.js": "/quran/static/js/main.62941270.js",
+    "main.css": "/quran/static/css/main.51b4bf64.css",
+    "main.js": "/quran/static/js/main.66c9d561.js",
+    "static/media/QuranSurah02-d9lVZ.ttf": "/quran/static/media/QuranSurah02-d9lVZ.d49749e2919223ec2096.ttf",
+    "static/media/Islamic-Library.jpg": "/quran/static/media/Islamic-Library.1e6a7263cc008f0b849f.jpg",
+    "static/media/sura_names.woff2": "/quran/static/media/sura_names.8e73904cead01ba35b83.woff2",
     "static/media/quran-icon.png": "/quran/static/media/quran-icon.784356d4dad9722eb9d2.png",
+    "static/media/prostration.jpg": "/quran/static/media/prostration.3afd6afb83c7e37a27ce.jpg",
+    "static/media/sajda.webp": "/quran/static/media/sajda.fad6314cea7afe046e65.webp",
+    "static/media/besmAllah.svg": "/quran/static/media/besmAllah.a242af87a1c9dde8de95af726b5956dc.svg",
+    "static/media/p1.woff2": "/quran/static/media/p1.7dade33a15d53afed7c9.woff2",
+    "static/media/Hero_background.jpg": "/quran/static/media/Hero_background.c347a5c40efeb96b150f.jpg",
+    "static/media/asmaaAlhosna.jpeg": "/quran/static/media/asmaaAlhosna.9458353d5062a0b5efde.jpeg",
+    "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.da9caea7.css.map": "/quran/static/css/main.da9caea7.css.map",
-    "main.62941270.js.map": "/quran/static/js/main.62941270.js.map"
+    "main.51b4bf64.css.map": "/quran/static/css/main.51b4bf64.css.map",
+    "main.66c9d561.js.map": "/quran/static/js/main.66c9d561.js.map"
   },
   "entrypoints": [
-    "static/css/main.da9caea7.css",
-    "static/js/main.62941270.js"
+    "static/css/main.51b4bf64.css",
+    "static/js/main.66c9d561.js"
   ]
 }
