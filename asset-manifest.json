@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.8daf96cb.css",
-    "main.js": "/quran/static/js/main.eb3ebf85.js",
+    "main.css": "/quran/static/css/main.5a1af725.css",
+    "main.js": "/quran/static/js/main.cc85e968.js",
     "static/media/QuranSurah02-d9lVZ.ttf": "/quran/static/media/QuranSurah02-d9lVZ.d49749e2919223ec2096.ttf",
     "static/media/Islamic-Library.jpg": "/quran/static/media/Islamic-Library.1e6a7263cc008f0b849f.jpg",
     "static/media/sura_names.woff2": "/quran/static/media/sura_names.8e73904cead01ba35b83.woff2",
@@ -14,11 +14,11 @@
     "static/media/asmaaAlhosna.jpeg": "/quran/static/media/asmaaAlhosna.9458353d5062a0b5efde.jpeg",
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.8daf96cb.css.map": "/quran/static/css/main.8daf96cb.css.map",
-    "main.eb3ebf85.js.map": "/quran/static/js/main.eb3ebf85.js.map"
+    "main.5a1af725.css.map": "/quran/static/css/main.5a1af725.css.map",
+    "main.cc85e968.js.map": "/quran/static/js/main.cc85e968.js.map"
   },
   "entrypoints": [
-    "static/css/main.8daf96cb.css",
-    "static/js/main.eb3ebf85.js"
+    "static/css/main.5a1af725.css",
+    "static/js/main.cc85e968.js"
   ]
 }
