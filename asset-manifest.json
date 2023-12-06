@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.a562b2da.css",
-    "main.js": "/quran/static/js/main.c1beb4ff.js",
+    "main.css": "/quran/static/css/main.e5f4ae90.css",
+    "main.js": "/quran/static/js/main.60178257.js",
     "static/media/4.mp3": "/quran/static/media/4.b8058b3eb7cffb722284.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_028.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_028.6637078cec915a536bb0.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_029.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_029.f70e13d82642f507ffc9.mp3",
@@ -407,11 +407,13 @@
     "static/media/sura_names.woff2": "/quran/static/media/sura_names.8e73904cead01ba35b83.woff2",
     "static/media/Mansour_Al-Salmi.jpg": "/quran/static/media/Mansour_Al-Salmi.f0578668c929a31a5828.jpg",
     "static/media/Mohamed_Ellhidan.jpg": "/quran/static/media/Mohamed_Ellhidan.f293cfd3976b12a7143d.jpg",
+    "static/media/ProximaVara.woff2": "/quran/static/media/ProximaVara.c0fe15c7ff4c58a5d2cd.woff2",
     "static/media/Mishari.jpg": "/quran/static/media/Mishari.a53fe865277b01dc3175.jpg",
     "static/media/Abdullrahman_Alsudais.jpg": "/quran/static/media/Abdullrahman_Alsudais.3561ea90784823782b1f.jpg",
     "static/media/Ahmed_Al-Nafis.jpg": "/quran/static/media/Ahmed_Al-Nafis.7d657f0f9e59de5b59c4.jpg",
     "static/media/Fares_Abbad.jpg": "/quran/static/media/Fares_Abbad.5125bd3622939162821d.jpg",
     "static/media/Yasser_dusary.jpg": "/quran/static/media/Yasser_dusary.c58ec41c1ed73d27e51d.jpg",
+    "static/media/NotoNaskhArabic-Regular.woff2": "/quran/static/media/NotoNaskhArabic-Regular.392dc6e83d73a2ff105b.woff2",
     "static/media/Idris_Abkar.jpg": "/quran/static/media/Idris_Abkar.20920d4bb951726d6dcd.jpg",
     "static/media/Saud_Al-Shuraim.jpg": "/quran/static/media/Saud_Al-Shuraim.f02543f09f12a1c8944c.jpg",
     "static/media/ELhosary.jpg": "/quran/static/media/ELhosary.2da810e13796942cc0ef.jpg",
@@ -431,11 +433,11 @@
     "static/media/asmaaAlhosna.jpeg": "/quran/static/media/asmaaAlhosna.9458353d5062a0b5efde.jpeg",
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.a562b2da.css.map": "/quran/static/css/main.a562b2da.css.map",
-    "main.c1beb4ff.js.map": "/quran/static/js/main.c1beb4ff.js.map"
+    "main.e5f4ae90.css.map": "/quran/static/css/main.e5f4ae90.css.map",
+    "main.60178257.js.map": "/quran/static/js/main.60178257.js.map"
   },
   "entrypoints": [
-    "static/css/main.a562b2da.css",
-    "static/js/main.c1beb4ff.js"
+    "static/css/main.e5f4ae90.css",
+    "static/js/main.60178257.js"
   ]
 }
