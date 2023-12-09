@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.e5f4ae90.css",
-    "main.js": "/quran/static/js/main.60178257.js",
+    "main.css": "/quran/static/css/main.0f1025e9.css",
+    "main.js": "/quran/static/js/main.f79f2c76.js",
     "static/media/4.mp3": "/quran/static/media/4.b8058b3eb7cffb722284.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_028.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_028.6637078cec915a536bb0.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_029.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_029.f70e13d82642f507ffc9.mp3",
@@ -433,11 +433,11 @@
     "static/media/asmaaAlhosna.jpeg": "/quran/static/media/asmaaAlhosna.9458353d5062a0b5efde.jpeg",
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.e5f4ae90.css.map": "/quran/static/css/main.e5f4ae90.css.map",
-    "main.60178257.js.map": "/quran/static/js/main.60178257.js.map"
+    "main.0f1025e9.css.map": "/quran/static/css/main.0f1025e9.css.map",
+    "main.f79f2c76.js.map": "/quran/static/js/main.f79f2c76.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5f4ae90.css",
-    "static/js/main.60178257.js"
+    "static/css/main.0f1025e9.css",
+    "static/js/main.f79f2c76.js"
   ]
 }
