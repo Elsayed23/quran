@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/quran/static/css/main.c8ada9d6.css",
-    "main.js": "/quran/static/js/main.762f4d69.js",
+    "main.js": "/quran/static/js/main.3933d52c.js",
     "static/media/4.mp3": "/quran/static/media/4.b8058b3eb7cffb722284.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_028.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_028.6637078cec915a536bb0.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_029.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_029.f70e13d82642f507ffc9.mp3",
@@ -424,6 +424,7 @@
     "static/media/Haitham.jpg": "/quran/static/media/Haitham.4ec787b968b8dc02ab65.jpg",
     "static/media/Elminshwey.jpg": "/quran/static/media/Elminshwey.64144053de37fe829169.jpg",
     "static/media/Abdul_Rashid_Sufi.jpg": "/quran/static/media/Abdul_Rashid_Sufi.192d7678bcc7140c1472.jpg",
+    "static/media/Hamoda.png": "/quran/static/media/Hamoda.0a86f9630e555c60a980.png",
     "static/media/Khalid_Galilee.jpg": "/quran/static/media/Khalid_Galilee.b364940983e9d4069a27.jpg",
     "static/media/sajda.webp": "/quran/static/media/sajda.fad6314cea7afe046e65.webp",
     "static/media/Hazza_Al-Balushi.jpg": "/quran/static/media/Hazza_Al-Balushi.20300f31007494f91d65.jpg",
@@ -439,10 +440,10 @@
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
     "main.c8ada9d6.css.map": "/quran/static/css/main.c8ada9d6.css.map",
-    "main.762f4d69.js.map": "/quran/static/js/main.762f4d69.js.map"
+    "main.3933d52c.js.map": "/quran/static/js/main.3933d52c.js.map"
   },
   "entrypoints": [
     "static/css/main.c8ada9d6.css",
-    "static/js/main.762f4d69.js"
+    "static/js/main.3933d52c.js"
   ]
 }
