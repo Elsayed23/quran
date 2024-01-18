@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import PageTitle from '../other/PageTitle';
+import SEO from '../other/SEO';
 import SecTitle from '../other/SecTitle';
 import Book from './Book';
 import Loading from '../other/Loading';
@@ -35,7 +35,7 @@ const Books = () => {
             <Loading />
             :
             <>
-                <PageTitle title='Quran | كتب إسلامية' />
+                <SEO title='كتب إسلامية' desc='Explore a rich collection of religious books encompassing Islamic teachings and wisdom. Our Religious Books page is a treasure trove of knowledge, covering various aspects of Islam. Immerse yourself in literature that nurtures your spiritual growth.' />
                 <ProgressBar />
                 <div className="container mx-auto py-8 px-4 md:px-16 before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
                     <img src={bgImage} className='fixed top-0 left-0 w-full h-full -z-10' />

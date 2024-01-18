@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTitle from '../other/PageTitle';
+import SEO from '../other/SEO';
 import SecTitle from '../other/SecTitle';
 import axios from 'axios';
 import PrayerBox from './PrayerBox'
@@ -180,6 +180,7 @@ const PrayerTimes = () => {
             `${durationRemainingTime.seconds()} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.hours()}`
         );
     };
+
     //#########################
 
     return (
@@ -188,7 +189,7 @@ const PrayerTimes = () => {
             <Loading />
             :
             <>
-                <PageTitle title='Quran | مواقيت الصلاة' />
+                <SEO title='مواقيت الصلاة' desc='Stay connected to your faith with accurate prayer timings. Our Prayer Timings page offers real-time schedules for Fajr, Dhuhr, Asr, Maghrib, and Isha prayers. Never miss a prayer and align your daily routine with Islamic practices.' />
                 <div className="py-14 px-4 md:px-16 min-h-[calc(100vh-(77px+80.28px))] before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
                     <img src={Prostrationimage} alt="" className='fixed top-0 left-0 w-full h-full -z-10' />
                     <SecTitle title='مَوَاقِيتُ ٱلصَّلَاةَ' />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import PageTitle from '../other/PageTitle';
+import SEO from '../other/SEO';
 import SecTitle from '../other/SecTitle';
 import List from './ZekrList'
 import ProgressBar from '../other/ProgressBar';
@@ -57,7 +57,7 @@ const Zekr = () => {
 
     return (
         <>
-            <PageTitle title={`Quran | ${zekrName}`} />
+            <SEO title={zekrName} desc='Immerse yourself in the serene world of remembrances. Our Azkar page offers a collection of morning and evening supplications, fostering a mindful and spiritual atmosphere. Start and end your day with these beautiful Azkar to bring tranquility to your heart and soul.' />
             <ProgressBar />
             <div className='py-14 px-4 md:px-16'>
                 <SecTitle title={zekrName} />

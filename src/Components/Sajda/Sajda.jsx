@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTitle from '../other/PageTitle'
+import SEO from '../other/SEO'
 import SecTitle from '../other/SecTitle';
 import axios from 'axios';
 import SajdaSurah from './SajdaSurah';
@@ -38,7 +38,7 @@ const Sajda = () => {
             <Loading />
             :
             <>
-                <PageTitle title='Quran | آيات السجدة' />
+                <SEO title='آيات السجدة' desc='Discover the verses of prostration in the Quran. Our Verses of Prostration page provides insight into the specific verses where Muslims perform Sujud. Enhance your Quranic studies and deepen your connection with these sacred verses.' />
                 <ProgressBar />
                 <div className="py-14 pr-4 pl-3 md:pr-16 before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
                     <img src={bgImage} className='fixed top-0 left-0 w-full h-full -z-10' />

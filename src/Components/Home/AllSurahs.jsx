@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Surah from './Surah';
-import PageTitle from '../other/PageTitle';
+import SEO from '../other/SEO';
 import Loading from '../other/Loading';
 import QName from '../QuranSVG.svg'
 import { Input } from '@material-tailwind/react';
@@ -99,7 +99,7 @@ const Home = () => {
             <Loading />
             :
             <>
-                <PageTitle title='Quran | القرآن' />
+                <SEO title='القرآن' desc='Explore the Quran online - Listen to beautiful recitations, read the complete Quranic text, and deepen your understanding of Islamic teachings. Our Quran page provides a digital gateway to spiritual enlightenment.' />
                 <ProgressBar />
                 <div className="pb-8 px-4">
                     <div className="py-8 min-h-[50vh] relative">

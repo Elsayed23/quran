@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Ayat from './Ayat';
 import { Link, useParams } from 'react-router-dom';
-import PageTitle from '../other/PageTitle';
+import SEO from '../other/SEO';
 import Loading from '../other/Loading';
 import { Select, Option, Button } from "@material-tailwind/react";
 import ProgressBar from '../other/ProgressBar';
@@ -300,7 +300,7 @@ const AyaDetails = () => {
             <Loading />
             :
             <>
-                <PageTitle title={`Quran | ${surah}`} />
+                <SEO title={surah} desc='xplore the Quran online - Listen to beautiful recitations, read the complete Quranic text, and deepen your understanding of Islamic teachings. Our Quran page provides a digital gateway to spiritual enlightenment.' />
                 <div className="before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:z-[-9]">
                     <img src={sheikhImg} className='fixed w-full h-full -z-10' alt="sheikh" />
                 </div>

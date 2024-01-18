@@ -3,7 +3,7 @@ import adhkar from '../../adhkar.json'
 import SecTitle from '../other/SecTitle'
 import { Link } from 'react-router-dom'
 import ProgressBar from '../other/ProgressBar'
-import PageTitle from '../other/PageTitle'
+import SEO from '../other/SEO'
 import { motion } from 'framer-motion'
 import arabicNumbers from '../../arabicNumbers'
 
@@ -22,7 +22,7 @@ const Adhkar = () => {
 
     return (
         <>
-            <PageTitle title='Quran | أذكار و أدعية' />
+            <SEO title='أذكار و أدعية' desc='Immerse yourself in the serene world of remembrances. Our Azkar page offers a collection of morning and evening supplications, fostering a mindful and spiritual atmosphere. Start and end your day with these beautiful Azkar to bring tranquility to your heart and soul.' />
             <ProgressBar />
             <div className="py-14 px-4 md:px-16">
                 <SecTitle title='أذكار و أدعية' />
