@@ -4,23 +4,23 @@
 
 @font-face {
     font-family: 'surahnames';
-    src: url('./fonts/sura_names.woff2') format('truetype');
+    src: url('./assets/fonts/sura_names.woff2') format('truetype');
 }
 
 @font-face {
     font-family: 'P-1';
-    src: url('./fonts/p1.woff2') format('truetype');
+    src: url('./assets/fonts/p1.woff2') format('truetype');
 }
 
 @font-face {
     font-family: 'quran-font';
-    src: url('./fonts/QuranSurah02-d9lVZ.ttf') format('truetype');
+    src: url('./assets/fonts/QuranSurah02-d9lVZ.ttf') format('truetype');
 }
 
 @font-face {
     font-family: "NotoNastaliq";
     src: local("Noto Naskh Arabic"), local("Nafees Regular"),
-        url("./fonts/NotoNaskhArabic-Regular.woff2");
+        url("./assets/fonts/NotoNaskhArabic-Regular.woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: "ProximaVara";
-    src: url("./fonts/ProximaVara.woff2");
+    src: url("./assets/fonts/ProximaVara.woff2");
 }
 
 * {
@@ -45,7 +45,7 @@ body {
 }
 
 .hero_bg {
-    background-image: url(./assets/Hero_background.jpg);
+    background-image: url(./assets/images/Hero_background.jpg);
     background-size: cover;
     filter: saturate(.1) brightness(.3) contrast(1.1);
 }
@@ -209,3 +209,92 @@ body {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
 }
+
+/* ///////////////////// */
+
+#page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#h3 {
+    color: #fff;
+}
+
+#ring {
+    width: 190px;
+    height: 190px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#ring:nth-child(1) {
+    border-bottom: 8px solid rgb(240, 42, 230);
+    animation: rotate1 2s linear infinite;
+}
+
+@keyframes rotate1 {
+    from {
+        transform: rotateX(50deg) rotateZ(110deg);
+    }
+
+    to {
+        transform: rotateX(50deg) rotateZ(470deg);
+    }
+}
+
+#ring:nth-child(2) {
+    border-bottom: 8px solid rgb(240, 19, 67);
+    animation: rotate2 2s linear infinite;
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
+    }
+
+    to {
+        transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
+    }
+}
+
+#ring:nth-child(3) {
+    border-bottom: 8px solid rgb(3, 170, 170);
+    animation: rotate3 2s linear infinite;
+}
+
+@keyframes rotate3 {
+    from {
+        transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
+    }
+
+    to {
+        transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
+    }
+}
+
+#ring:nth-child(4) {
+    border-bottom: 8px solid rgb(207, 135, 1);
+    animation: rotate4 2s linear infinite;
+}
+
+@keyframes rotate4 {
+    from {
+        transform: rotateX(70deg) rotateZ(270deg);
+    }
+
+    to {
+        transform: rotateX(70deg) rotateZ(630deg);
+    }
+}
+
+/* Improving visualization in light mode */

@@ -4,7 +4,7 @@ import SecTitle from '../other/SecTitle';
 import axios from 'axios';
 import PrayerBox from './PrayerBox'
 import Loading from '../other/Loading';
-import Prostrationimage from '../../assets/prostration.jpg'
+import Prostrationimage from '../../assets/images/prostration.jpg'
 import moment from 'moment';
 
 const PrayerTimes = () => {

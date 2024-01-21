@@ -49,7 +49,3 @@ The Quran App utilizes the following APIs:
 - [QuranAudio1 API](https://quran.api-docs.io/v4/audio-recitations/list-of-all-surah-audio-files-for-specific-reciter): Provides audio recitations for specific reciters.
 
 - [QuranAudio2 API](https://mp3quran.net/ar/api): Offers additional audio recitations for the Quran.
-
----
-
-May this app bring you closer to the teachings of the Quran and enhance your spiritual journey!

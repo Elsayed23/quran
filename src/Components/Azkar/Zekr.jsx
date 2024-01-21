@@ -55,6 +55,7 @@ const Zekr = () => {
         }
     };
 
+
     return (
         <>
             <SEO title={zekrName} desc='Immerse yourself in the serene world of remembrances. Our Azkar page offers a collection of morning and evening supplications, fostering a mindful and spiritual atmosphere. Start and end your day with these beautiful Azkar to bring tranquility to your heart and soul.' />
@@ -62,7 +63,7 @@ const Zekr = () => {
             <div className='py-14 px-4 md:px-16'>
                 <SecTitle title={zekrName} />
                 <div className='flex gap-4 mb-9'>
-                    <audio ref={audioRef} onEnded={() => { setIsEnded(true) }} src={require(`../../audio/${getZerk[0].filename}.mp3`)} />
+                    <audio ref={audioRef} onEnded={() => { setIsEnded(true) }} src={require(`../../assets/audio/${getZerk[0].filename}.mp3`)} />
                     <motion.div whileTap={{ scale: .9 }} onClick={() => { setIsPlaying(prev => !prev) }} className="toggleAudio cursor-pointer px-4 py-2 text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm">
                         <div className='flex items-center gap-3' onClick={isPlaying ? handlePauseSurah : handlePlaySurah}>
                             {isPlaying ? 'Pause' : 'Play'} Audio

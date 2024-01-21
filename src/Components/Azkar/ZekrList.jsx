@@ -85,7 +85,7 @@ const List = ({ text, filename, count, setIsPlayingZekr }) => {
             </motion.div>
             <audio
                 ref={audioRef}
-                src={require(`../../audio/${filename}.mp3`)} />
+                src={require(`../../assets/audio/${filename}.mp3`)} />
         </li>
     )
 }

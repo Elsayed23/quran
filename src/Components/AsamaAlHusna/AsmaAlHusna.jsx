@@ -5,7 +5,7 @@ import SecTitle from '../other/SecTitle';
 import SEO from '../other/SEO';
 import Loading from '../other/Loading';
 import ProgressBar from '../other/ProgressBar';
-import bgImage from '../../assets/asmaaAlhosna.jpeg'
+import bgImage from '../../assets/images/asmaaAlhosna.jpeg'
 
 const AsmaAlHusna = () => {
 

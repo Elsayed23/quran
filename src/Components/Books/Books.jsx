@@ -5,7 +5,7 @@ import SecTitle from '../other/SecTitle';
 import Book from './Book';
 import Loading from '../other/Loading';
 import ProgressBar from '../other/ProgressBar';
-import bgImage from '../../assets/Islamic-Library.jpg'
+import bgImage from '../../assets/images/Islamic-Library.jpg'
 
 const Books = () => {
 

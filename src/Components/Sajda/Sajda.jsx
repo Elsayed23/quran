@@ -5,7 +5,7 @@ import axios from 'axios';
 import SajdaSurah from './SajdaSurah';
 import Loading from '../other/Loading';
 import ProgressBar from '../other/ProgressBar';
-import bgImage from '../../assets/sajda.webp'
+import bgImage from '../../assets/images/sajda.webp'
 
 const Sajda = () => {
 

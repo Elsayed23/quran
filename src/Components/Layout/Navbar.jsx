@@ -84,7 +84,7 @@ const NavBar = () => {
         <nav className='bg-[#343a40] duration-300 border-gray-200 fixed top-0 w-full z-[999]'>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 w-full">
                 <Link to="/">
-                    <img src={require('../../assets/logo.jpg')} style={{ width: 45 }} className='rounded-full' alt="logo" />
+                    <img src={require('../../assets/images/logo.jpg')} style={{ width: 45 }} className='rounded-full' alt="logo" />
                 </Link>
                 <label className="hamburger cursor-pointer block md:hidden" >
                     <input type="checkbox" ref={checkRef} onChange={handleChange} className='hidden' />
