@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import ProgressBar from '../other/ProgressBar';
-import { motion } from 'framer-motion';
+import { easeInOut, motion } from 'framer-motion';
 
 const Home = () => {
 
@@ -30,7 +30,7 @@ const Home = () => {
     let simplifyArabic = function (str) {
         return str.replace(/[^\u0000-\u007E]/g, function (a) {
             let retval = arabicNormChar[a]
-            if (retval == undefined) { retval = a }
+            if (retval === undefined) { retval = a }
             return retval;
         }).normalize('NFKD').toLowerCase();
     }
@@ -59,27 +59,43 @@ const Home = () => {
         {
             id: 1,
             surahName: "سورة الملك",
-            surahId: 67
+            surahId: 67,
+            y: 60
         },
         {
             id: 2,
             surahName: "سورة يس",
-            surahId: 36
+            surahId: 36,
+            y: 90
         },
         {
             id: 3,
             surahName: "سورة الكهف",
-            surahId: 18
+            surahId: 18,
+            y: 120
         },
         {
             id: 4,
             surahName: "سورة الواقعة",
-            surahId: 56
+            surahId: 56,
+            y: 180
         }
     ]
     const quickSurahs = quickSurahsData.map(surah => {
         return (
-            <motion.div whileTap={{ scale: .9 }} key={surah.id}>
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: surah.y
+                }}
+                animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: .8, ease: easeInOut },
+
+                }}
+                whileTap={{ scale: .9 }}
+                key={surah.id}>
                 <Link to={`/surahDetails/${surah.surahId}`} className='bg-white px-4 py-1 text-[#272727] rounded-full block'>
                     {surah.surahName}
                 </Link>
@@ -93,6 +109,7 @@ const Home = () => {
     }, [])
 
 
+
     return (
         loading
             ?
@@ -101,11 +118,33 @@ const Home = () => {
             <>
                 <SEO title='القرآن' desc='Explore the Quran online - Listen to beautiful recitations, read the complete Quranic text, and deepen your understanding of Islamic teachings. Our Quran page provides a digital gateway to spiritual enlightenment.' />
                 <ProgressBar />
-                <div className="pb-8 px-4">
-                    <div className="py-8 min-h-[50vh] relative">
+                <div className="pb-8 px-4 overflow-hidden">
+                    <motion.div
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            opacity: 1,
+                            transition: { duration: 1.5 },
+                        }}
+                        className="py-8 min-h-[50vh] relative"
+                    >
                         <div className="hero_bg w-full h-full absolute -z-10 inset-0"></div>
                         <div className="flex items-center flex-col gap-16">
-                            <img src={QName} className='w-72' />
+                            <motion.img
+                                initial={{
+                                    opacity: 0,
+                                    y: -100
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: .8, ease: easeInOut }
+                                }}
+                                src={QName}
+                                alt='Quran_Karem_image'
+                                className='w-72'
+                            />
                             <div className='w-full md:w-[650px]'>
                                 <Input color='white' label='إبحث عن سورة' variant='standard' className='w-full' onChange={handleChange} />
                                 <div className="flex justify-center items-center flex-wrap gap-x-3 gap-y-4 mt-8">
@@ -113,7 +152,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                     <div className="container mx-auto py-5 border-t border-[#464b50]">
                         <div className="pb-3 text-xs flex gap-1">
                             رتب:

@@ -4,6 +4,7 @@ import App from './App';
 import { ThemeProvider } from "@material-tailwind/react";
 import './index.css';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider>

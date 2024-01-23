@@ -37,7 +37,7 @@ const AsmaAlHusna = () => {
             <>
                 <SEO title='الأسماء الحسني' desc="Explore the divine beauty of Allah's Names. Our AsmaAlHusna page provides a comprehensive list of the 99 Names of Allah, each carrying profound meanings and significance in Islamic tradition. Delve into the spiritual journey of understanding and reflecting upon the attributes of the Almighty." />
                 <ProgressBar />
-                <div className="py-14 px-4 md:px-16 before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
+                <div className="overflow-hidden py-14 px-4 md:px-16 before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
                     <img src={bgImage} className='fixed top-0 left-0 w-full h-full -z-10' />
                     <SecTitle title='ٱلۡأَسۡمَآءُ ٱلۡحُسۡنَى' />
                     <ol className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5'>

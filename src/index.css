@@ -42,6 +42,7 @@ body {
         "Helvetica Neue", Helvetica, Arial;
     background-color: #1f2125;
     color: #e7e9ea;
+    overflow-x: hidden;
 }
 
 .hero_bg {
@@ -81,86 +82,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #2ca4ab;
-}
-
-.dot:first-child:before {
-    animation-delay: 0ms;
-}
-
-.dot:first-child:after {
-    animation-delay: 0ms;
-}
-
-.dot:last-child:before {
-    animation-delay: 200ms;
-}
-
-.dot:last-child:after {
-    animation-delay: 200ms;
-}
-
-.dot:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    animation-name: dotHover;
-    animation-duration: 900ms;
-    animation-timing-function: cubic-bezier(.82, 0, .26, 1);
-    animation-iteration-count: infinite;
-    animation-delay: 100ms;
-    background: #2ca4ab;
-    border-radius: 100%;
-}
-
-.dot:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: black;
-    box-shadow: 0px 0px 1px black;
-    opacity: .20;
-    width: 100%;
-    height: 3px;
-    left: 0;
-    bottom: -2px;
-    border-radius: 100%;
-    animation-name: dotShadow;
-    animation-duration: 900ms;
-    animation-timing-function: cubic-bezier(.82, 0, .26, 1);
-    animation-iteration-count: infinite;
-    animation-delay: 100ms;
-}
-
-@keyframes dotShadow {
-    0% {
-        transform: scaleX(1);
-    }
-
-    50% {
-        opacity: 0;
-        transform: scaleX(.6);
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes dotHover {
-    0% {
-        top: 0px;
-    }
-
-    50% {
-        top: -50px;
-        transform: scale(1.1);
-    }
-
-    100% {
-        top: 0;
-    }
 }
 
 .select ul::-webkit-scrollbar {
@@ -210,91 +131,79 @@ body {
     stroke-dashoffset: -32.42;
 }
 
-/* ///////////////////// */
+/* Loading  */
 
-#page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.loader div {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    animation: fade458 1s linear infinite;
 }
 
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-#h3 {
-    color: #fff;
-}
-
-#ring {
-    width: 190px;
-    height: 190px;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    position: absolute;
-}
-
-#ring:nth-child(1) {
-    border-bottom: 8px solid rgb(240, 42, 230);
-    animation: rotate1 2s linear infinite;
-}
-
-@keyframes rotate1 {
+@keyframes fade458 {
     from {
-        transform: rotateX(50deg) rotateZ(110deg);
+        opacity: 1;
     }
 
     to {
-        transform: rotateX(50deg) rotateZ(470deg);
+        opacity: 0.25;
     }
 }
 
-#ring:nth-child(2) {
-    border-bottom: 8px solid rgb(240, 19, 67);
-    animation: rotate2 2s linear infinite;
+.loader .bar1 {
+    transform: rotate(0deg) translate(0, -130%);
+    animation-delay: 0s;
 }
 
-@keyframes rotate2 {
-    from {
-        transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
-    }
-
-    to {
-        transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
-    }
+.loader .bar2 {
+    transform: rotate(30deg) translate(0, -130%);
+    animation-delay: -1.1s;
 }
 
-#ring:nth-child(3) {
-    border-bottom: 8px solid rgb(3, 170, 170);
-    animation: rotate3 2s linear infinite;
+.loader .bar3 {
+    transform: rotate(60deg) translate(0, -130%);
+    animation-delay: -1s;
 }
 
-@keyframes rotate3 {
-    from {
-        transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
-    }
-
-    to {
-        transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
-    }
+.loader .bar4 {
+    transform: rotate(90deg) translate(0, -130%);
+    animation-delay: -0.9s;
 }
 
-#ring:nth-child(4) {
-    border-bottom: 8px solid rgb(207, 135, 1);
-    animation: rotate4 2s linear infinite;
+.loader .bar5 {
+    transform: rotate(120deg) translate(0, -130%);
+    animation-delay: -0.8s;
 }
 
-@keyframes rotate4 {
-    from {
-        transform: rotateX(70deg) rotateZ(270deg);
-    }
-
-    to {
-        transform: rotateX(70deg) rotateZ(630deg);
-    }
+.loader .bar6 {
+    transform: rotate(150deg) translate(0, -130%);
+    animation-delay: -0.7s;
 }
 
-/* Improving visualization in light mode */
+.loader .bar7 {
+    transform: rotate(180deg) translate(0, -130%);
+    animation-delay: -0.6s;
+}
+
+.loader .bar8 {
+    transform: rotate(210deg) translate(0, -130%);
+    animation-delay: -0.5s;
+}
+
+.loader .bar9 {
+    transform: rotate(240deg) translate(0, -130%);
+    animation-delay: -0.4s;
+}
+
+.loader .bar10 {
+    transform: rotate(270deg) translate(0, -130%);
+    animation-delay: -0.3s;
+}
+
+.loader .bar11 {
+    transform: rotate(300deg) translate(0, -130%);
+    animation-delay: -0.2s;
+}
+
+.loader .bar12 {
+    transform: rotate(330deg) translate(0, -130%);
+    animation-delay: -0.1s;
+}

@@ -68,12 +68,12 @@ const NavBar = () => {
     ]
 
 
-    const activeClasses = 'md:before:right-[0!important] bg-blue-gray-600 md:bg-transparent md:text-[#2ca4ab] md:before:w-full md:before:h-[2.2px]'
+    const activeClasses = 'md:before:right-[0!important] bg-blue-gray-600 md:bg-transparent md:text-[#2ca4ab] md:before:w-full md:before:h-[2px]'
 
     const links = linksData.map(link => {
         return (
             <li key={link.id}>
-                <Link to={link.url} className={`nav--item block py-2 px-3 rounded md:border-0 hover:bg-blue-gray-600 md:hover:bg-transparent md:hover:text-[#2ca4ab] md:py-2 md:px-1 relative md:before:absolute md:before:w-0 md:before:h-[0] md:before:right-2/4 md:before:bottom-0 md:before:bg-[#2ca4ab] hover:before:w-full hover:before:h-[2.2px] hover:before:right-0 md:before:duration-300 duration-300 ${location.pathname === link.url || location.pathname === '/' && link.url.includes('/allSurahs') && activeClasses || location.pathname.startsWith('/surahDetails') && link.url.includes('/allSurahs') && activeClasses || location.pathname.startsWith('/zekr') && link.url.includes('/adhkar') && activeClasses ? activeClasses : ''}`}>{link.name}</Link>
+                <Link to={link.url} className={`nav--item block py-2 px-3 rounded md:border-0 hover:bg-blue-gray-600 md:hover:bg-transparent md:hover:text-[#2ca4ab] md:py-2 md:px-1 relative md:before:absolute md:before:w-0 md:before:h-[0] md:before:right-2/4 md:before:bottom-0 md:before:bg-[#2ca4ab] hover:before:w-full hover:before:h-[2px] hover:before:right-0 md:before:duration-300 duration-300 ${location.pathname === link.url || location.pathname === '/' && link.url.includes('/allSurahs') && activeClasses || location.pathname.startsWith('/surahDetails') && link.url.includes('/allSurahs') && activeClasses || location.pathname.startsWith('/zekr') && link.url.includes('/adhkar') && activeClasses ? activeClasses : ''}`}>{link.name}</Link>
             </li>
         )
     })

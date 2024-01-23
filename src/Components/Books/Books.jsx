@@ -38,9 +38,9 @@ const Books = () => {
                 <SEO title='كتب إسلامية' desc='Explore a rich collection of religious books encompassing Islamic teachings and wisdom. Our Religious Books page is a treasure trove of knowledge, covering various aspects of Islam. Immerse yourself in literature that nurtures your spiritual growth.' />
                 <ProgressBar />
                 <div className="container mx-auto py-8 px-4 md:px-16 before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
-                    <img src={bgImage} className='fixed top-0 left-0 w-full h-full -z-10' />
+                    <img src={bgImage} alt='bg' className='fixed top-0 left-0 w-full h-full -z-10' />
                     <SecTitle title='كُتب إسلامية' />
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-6">
+                    <div className="grid grid-cols-1 gap-x-4 gap-y-6">
                         {book}
                     </div>
                 </div>
