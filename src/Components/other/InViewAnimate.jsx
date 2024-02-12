@@ -9,9 +9,9 @@ const InViewAnimate = ({ children, className, id }) => {
           <div ref={ref}
                className={`w-full h-full ${className}`}
                style={{
-                    transform: isInView ? "none" : id % 2 === 0 ? "translateX(-200px) translateY(-50px)" : "translateX(200px) translateY(-50px)",
+                    transform: isInView ? 'translateY(0)' : 'translateY(100px)',
                     opacity: isInView ? 1 : 0,
-                    transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+                    transition: 'ease-in-out .7s'
                }}
           >
 

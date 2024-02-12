@@ -24,8 +24,8 @@ const Zekr = () => {
 
     const { id } = useParams()
 
-    const getZerk = adhkar.filter(test => {
-        return test.id == id
+    const getZerk = adhkar.filter(zekr => {
+        return zekr.id === +id
     })
 
 
@@ -44,6 +44,25 @@ const Zekr = () => {
 
         }
     };
+
+    // Pause other playing audio elements when play surah
+    React.useEffect(() => {
+        const handleAudioState = () => {
+            if (isPlaying) {
+                document.querySelectorAll("audio").forEach((audio) => {
+                    if (audio !== audioRef.current) {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    }
+                });
+                audioRef.current?.play();
+            } else {
+                audioRef.current?.pause();
+            }
+        };
+
+        handleAudioState();
+    }, [isPlaying]);
 
     const zekrName = getZerk[0].category
 

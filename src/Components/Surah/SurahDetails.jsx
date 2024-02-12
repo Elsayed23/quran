@@ -4,7 +4,7 @@ import Ayat from './Ayat';
 import { Link, useParams } from 'react-router-dom';
 import SEO from '../other/SEO';
 import Loading from '../other/Loading';
-import { Select, Option, Button } from "@material-tailwind/react";
+import { Select, Option } from "@material-tailwind/react";
 import ProgressBar from '../other/ProgressBar';
 import besmAllah from '../besmAllah.svg'
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion'
 import Download from './Download';
 
-const AyaDetails = () => {
+
+const SurahDetails = () => {
 
     console.log("الحمد لله");
 
@@ -31,6 +32,7 @@ const AyaDetails = () => {
 
     const audioRef = React.useRef(null);
 
+    // Pause surah if ended
     React.useEffect(() => {
         isEnded && setIsPlaying(false)
     }, [isEnded])
@@ -43,6 +45,25 @@ const AyaDetails = () => {
     React.useEffect(() => {
         setIsPlaying(false)
     }, [sheikh])
+
+    // Pause other playing audio elements when play surah
+    React.useEffect(() => {
+        const handleAudioState = () => {
+            if (isPlaying) {
+                document.querySelectorAll("audio").forEach((audio) => {
+                    if (audio !== audioRef.current) {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    }
+                });
+                audioRef.current?.play();
+            } else {
+                audioRef.current?.pause();
+            }
+        };
+
+        handleAudioState();
+    }, [isPlaying]);
 
     async function getAyat() {
 
@@ -68,12 +89,9 @@ const AyaDetails = () => {
     }
 
 
-    const allSurahsList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]
+    const surahsCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]
 
     const handleSurahNum = id < 10 ? `00${id}` : id >= 10 && id < 100 ? `0${id}` : id;
-
-
-
 
 
 
@@ -83,7 +101,7 @@ const AyaDetails = () => {
             name: 'المنشاوي',
             audio: `https://download.quranicaudio.com/qdc/siddiq_minshawi/murattal/${id}.mp3`,
             img: require('../../assets/images/Elminshwey.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 2,
@@ -97,140 +115,140 @@ const AyaDetails = () => {
             name: 'هيثم الدخين',
             audio: `https://server16.mp3quran.net/h_dukhain/Rewayat-Hafs-A-n-Assem/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Haitham.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 4,
             name: 'ياسر الدوسري',
             audio: `https://download.quranicaudio.com/quran/yasser_ad-dussary//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Yasser_dusary.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 5,
             name: 'عبد الباسط',
             audio: `https://download.quranicaudio.com/qdc/abdul_baset/murattal/${id}.mp3`,
             img: require('../../assets/images/Abd_El_Basset.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 6,
             name: 'محمد ايوب',
             audio: `https://download.quranicaudio.com/quran/muhammad_ayyoob_hq//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Mohamed_Ayoub.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 7,
             name: 'الحصري',
             audio: `https://download.quranicaudio.com/qdc/khalil_al_husary/murattal/${id}.mp3`,
             img: require('../../assets/images/ELhosary.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 8,
             name: 'مشاري العفاسي',
             audio: `https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/${id}.mp3`,
             img: require('../../assets/images/Mishari.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 9,
             name: 'ماهر المعيقلي',
             audio: `https://download.quranicaudio.com/quran/maher_256//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Maher.png'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 10,
             name: 'عبدالله علي جابر',
             audio: `https://download.quranicaudio.com/quran/abdullaah_alee_jaabir_studio//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Abdullah_Ali.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 11,
             name: 'ناصر القطامي',
             audio: `https://download.quranicaudio.com/quran/nasser_bin_ali_alqatami//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Naser.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 12,
             name: 'عبد الرشيد صوفي',
             audio: `https://download.quranicaudio.com/quran/abdurrashid_sufi//${handleSurahNum}.mp3`,
             img: require('../../assets/images/Abdul_Rashid_Sufi.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 13,
             name: 'سعود الشريم',
             audio: `https://server7.mp3quran.net/shur/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Saud_Al-Shuraim.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 14,
             name: 'عبد الرحمن السديس',
             audio: `https://server11.mp3quran.net/sds/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Abdullrahman_Alsudais.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 15,
             name: 'حسن صالح',
             audio: `https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Hasan_Saleh.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 16,
             name: 'فارس عباد',
             audio: `https://server8.mp3quran.net/frs_a/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Fares_Abbad.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 17,
             name: 'منصور السالمي',
             audio: `https://server14.mp3quran.net/mansor/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Mansour_Al-Salmi.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 18,
             name: 'إدريس أبكر',
             audio: `https://server6.mp3quran.net/abkr/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Idris_Abkar.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 19,
             name: 'أحمد النفيس',
             audio: `https://server16.mp3quran.net/nufais/Rewayat-Hafs-A-n-Assem/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Ahmed_Al-Nafis.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 20,
             name: 'خالد الجليل',
             audio: `https://server10.mp3quran.net/jleel/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Khalid_Galilee.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 21,
             name: 'محمد اللحيدان',
             audio: `https://server8.mp3quran.net/lhdan/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Mohamed_Ellhidan.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 22,
             name: 'أحمد عبدالرازق نصر',
             audio: `https://ia903103.us.archive.org/19/items/xxxxxxxxxxxxxxxxxxxxxxxxxxx2_20191118_201911/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Ahmed_Nasr.jpg'),
-            surahList: allSurahsList,
+            surahList: surahsCount,
         },
         {
             id: 23,
@@ -276,7 +294,7 @@ const AyaDetails = () => {
     }, [id])
 
     React.useEffect(() => {
-        recitations.map(recitation => {
+        recitations.map((recitation) => {
             if (recitation.name === sheikh) {
                 if (recitation.surahList.includes(+id)) {
                     setAudio(recitation.audio)
@@ -384,9 +402,9 @@ const AyaDetails = () => {
             </>
     )
 }
-export default AyaDetails;
+export default SurahDetails;
 
-function Alert({ sheikh }) {
+const Alert = ({ sheikh }) => {
     return (
         <div className="flex items-center gap-2 bg-[#2ca4ab] px-3 py-2 rounded-lg w-fit mb-4">
             <svg
