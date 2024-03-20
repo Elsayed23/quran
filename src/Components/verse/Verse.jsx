@@ -13,9 +13,6 @@ const Verse = () => {
 
      const { surahId, verseId } = useParams()
 
-
-     console.log(surahId, verseId);
-
      const getVerse = async () => {
           const { data: { data } } = await axios.get(`https://api.quran.gading.dev/surah/${surahId}/${verseId}`)
           setVerses(data)
@@ -32,7 +29,7 @@ const Verse = () => {
      return (
           verses
                ?
-               <div className='container mx-auto pt-10 sm:pt-16 pb-5 sm:pb-7 px-4 flex flex-col gap-5 min-h-[calc(100vh-150.88px)]'>
+               <div className='container mx-auto pt-10 sm:pt-16 pb-5 sm:pb-7 px-4 flex flex-col gap-5 min-h-[calc(100vh-194px)]'>
                     <Ayat {...verses} singleAyahs={singleAyahs} id={surahId} />
                     <div className="flex justify-center items-center">
                          <Link to={`/surahDetails/${surahId}`}>

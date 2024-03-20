@@ -62,7 +62,7 @@ const Card = ({ text: { arab }, number: { inSurah }, translation: { en }, id, se
 
     const handleCopyLinkOfAya = async () => {
         try {
-            await navigator.clipboard.writeText(`https://elsayed23.github.io/quran/verse/${id}/${inSurah}`);
+            await navigator.clipboard.writeText(`https://elsayed23.github.io/quran/#/verse/${id}/${inSurah}`);
             toast.success('Copied to clipboard')
         } catch (error) {
             console.error(
