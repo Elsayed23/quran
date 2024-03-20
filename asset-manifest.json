@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.2632086c.css",
-    "main.js": "/quran/static/js/main.64cb2c0d.js",
+    "main.css": "/quran/static/css/main.8e344512.css",
+    "main.js": "/quran/static/js/main.213d63b0.js",
     "static/media/4.mp3": "/quran/static/media/4.b8058b3eb7cffb722284.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_028.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_028.6637078cec915a536bb0.mp3",
+    "static/media/ramadan.jpg": "/quran/static/media/ramadan.507a240b5e375a664c35.jpg",
     "static/media/ar_7esn_AlMoslem_by_Doors_029.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_029.f70e13d82642f507ffc9.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_002.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_002.6a29280672df44c8dbc7.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_026.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_026.71f77627cf8db0155bc9.mp3",
@@ -230,7 +231,6 @@
     "static/media/142.mp3": "/quran/static/media/142.b68fa0f517067537dc5d.mp3",
     "static/media/Abdullah_Ali.jpg": "/quran/static/media/Abdullah_Ali.c4d019223a959d72749b.jpg",
     "static/media/Mohamed_Ayoub.jpg": "/quran/static/media/Mohamed_Ayoub.3541e0c257ec80b0e580.jpg",
-    "static/media/Islamic-Library.jpg": "/quran/static/media/Islamic-Library.1e6a7263cc008f0b849f.jpg",
     "static/media/sura_names.woff2": "/quran/static/media/sura_names.8e73904cead01ba35b83.woff2",
     "static/media/Mansour_Al-Salmi.jpg": "/quran/static/media/Mansour_Al-Salmi.f0578668c929a31a5828.jpg",
     "static/media/Mohamed_Ellhidan.jpg": "/quran/static/media/Mohamed_Ellhidan.f293cfd3976b12a7143d.jpg",
@@ -246,14 +246,12 @@
     "static/media/Saud_Al-Shuraim.jpg": "/quran/static/media/Saud_Al-Shuraim.f02543f09f12a1c8944c.jpg",
     "static/media/ELhosary.jpg": "/quran/static/media/ELhosary.2da810e13796942cc0ef.jpg",
     "static/media/Ahmed_Nasr.jpg": "/quran/static/media/Ahmed_Nasr.dc056b5ef6c3aea4d842.jpg",
-    "static/media/prostration.jpg": "/quran/static/media/prostration.3afd6afb83c7e37a27ce.jpg",
     "static/media/Hasan_Saleh.jpg": "/quran/static/media/Hasan_Saleh.dae583dea5761f36f356.jpg",
     "static/media/Haitham.jpg": "/quran/static/media/Haitham.4ec787b968b8dc02ab65.jpg",
     "static/media/Elminshwey.jpg": "/quran/static/media/Elminshwey.64144053de37fe829169.jpg",
     "static/media/Abdul_Rashid_Sufi.jpg": "/quran/static/media/Abdul_Rashid_Sufi.192d7678bcc7140c1472.jpg",
     "static/media/Hamoda.png": "/quran/static/media/Hamoda.0a86f9630e555c60a980.png",
     "static/media/Khalid_Galilee.jpg": "/quran/static/media/Khalid_Galilee.b364940983e9d4069a27.jpg",
-    "static/media/sajda.webp": "/quran/static/media/sajda.fad6314cea7afe046e65.webp",
     "static/media/Hazza_Al-Balushi.jpg": "/quran/static/media/Hazza_Al-Balushi.20300f31007494f91d65.jpg",
     "static/media/Abdulaziz_Suhaim.jpg": "/quran/static/media/Abdulaziz_Suhaim.3ff88972ec6863f2c1fc.jpg",
     "static/media/Raad_Kurdi.jpg": "/quran/static/media/Raad_Kurdi.74e4a1b6d3d5d1080fa7.jpg",
@@ -262,15 +260,13 @@
     "static/media/besmAllah.svg": "/quran/static/media/besmAllah.a242af87a1c9dde8de95af726b5956dc.svg",
     "static/media/p1.woff2": "/quran/static/media/p1.7dade33a15d53afed7c9.woff2",
     "static/media/Abd_El_Basset.jpg": "/quran/static/media/Abd_El_Basset.88c09e62530ee8c37c79.jpg",
-    "static/media/Hero_background.jpg": "/quran/static/media/Hero_background.c347a5c40efeb96b150f.jpg",
-    "static/media/asmaaAlhosna.jpeg": "/quran/static/media/asmaaAlhosna.9458353d5062a0b5efde.jpeg",
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.2632086c.css.map": "/quran/static/css/main.2632086c.css.map",
-    "main.64cb2c0d.js.map": "/quran/static/js/main.64cb2c0d.js.map"
+    "main.8e344512.css.map": "/quran/static/css/main.8e344512.css.map",
+    "main.213d63b0.js.map": "/quran/static/js/main.213d63b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2632086c.css",
-    "static/js/main.64cb2c0d.js"
+    "static/css/main.8e344512.css",
+    "static/js/main.213d63b0.js"
   ]
 }
