@@ -4,7 +4,7 @@ import SecTitle from '../other/SecTitle';
 import axios from 'axios';
 import PrayerBox from './PrayerBox'
 import Loading from '../other/Loading';
-import Prostrationimage from '../../assets/images/prostration.jpg'
+// import Prostrationimage from '../../assets/images/prostration.jpg'
 import moment from 'moment';
 import { easeInOut, motion } from 'framer-motion';
 
@@ -182,8 +182,6 @@ const PrayerTimes = () => {
         );
     };
 
-    //#########################
-
     return (
         loading
             ?
@@ -191,22 +189,23 @@ const PrayerTimes = () => {
             :
             <>
                 <SEO title='مواقيت الصلاة' desc='Stay connected to your faith with accurate prayer timings. Our Prayer Timings page offers real-time schedules for Fajr, Dhuhr, Asr, Maghrib, and Isha prayers. Never miss a prayer and align your daily routine with Islamic practices.' />
-                <div className="py-14 px-4 md:px-16 min-h-[calc(100vh-(77px+80.88px))] before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:-z-[9]">
-                    <img src={Prostrationimage} alt="" className='fixed top-0 left-0 w-full h-full -z-10' />
-                    <SecTitle title='مَوَاقِيتُ ٱلصَّلَاةَ' />
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: .8 } }} className="flex items-center justify-around lg:gap-0 gap-6 flex-col lg:flex-row mb-10">
-                        <h5 className='text-xl'>{currDay.ar} {currDayNumAndMonth.number} {currDayNumAndMonth.ar} {currYear.hijri} | {currTime}</h5>
-                        <h1 className='text-3xl flex gap-2 sm:flex-row flex-col items-center'>متبقي علي صلاة  {prayersArray[nextPrayerIndex].displayName} <span className='font-bold'>{remainingTime}</span></h1>
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, y: 90 }} animate={{ opacity: 1, y: 0, transition: { duration: .8, ease: easeInOut } }} className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-5">
-                        {
-                            prayers.map(pray => {
-                                return (
-                                    <PrayerBox key={pray.id} {...pray} />
-                                )
-                            })
-                        }
-                    </motion.div>
+                <div className="py-14 px-4 md:px-16 min-h-[calc(100vh-194px)]">
+                    <SecTitle title='مَوَاقِيتُ ٱلصَّلَاةَ' className='mb-[0!important]' />
+                    <div className='h-[calc(100vh-390.76px)] flex flex-col justify-center pb-10'>
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: .8 } }} className="flex items-center justify-around lg:gap-0 gap-6 flex-col lg:flex-row mb-10">
+                            <h5 className='text-xl'>{currDay.ar} {currDayNumAndMonth.number} {currDayNumAndMonth.ar} {currYear.hijri} | {currTime}</h5>
+                            <h1 className='text-3xl flex gap-2 sm:flex-row flex-col items-center'>متبقي علي صلاة  {prayersArray[nextPrayerIndex].displayName} <span className='font-bold'>{remainingTime}</span></h1>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, y: 90 }} animate={{ opacity: 1, y: 0, transition: { duration: .8, ease: easeInOut } }} className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-5">
+                            {
+                                prayers.map(pray => {
+                                    return (
+                                        <PrayerBox key={pray.id} {...pray} />
+                                    )
+                                })
+                            }
+                        </motion.div>
+                    </div>
                 </div>
             </>
     );

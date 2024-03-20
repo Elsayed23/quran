@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { FaBook } from "react-icons/fa";
 import InViewAnimate from '../other/InViewAnimate'
 
 const Book = ({ title, description, attachments: [{ url }] }) => {
@@ -15,7 +14,7 @@ const Book = ({ title, description, attachments: [{ url }] }) => {
                     <p className='mb-4'>{description}</p>
                 </div>
                 <div className="flex justify-between">
-                    <a href={url} rel='noreferrer' target='_blank' className='text-right block hover:text-[#2ca4ab] font-bold px-3 py-2 rounded-sm book--buttons text-[#2ca4ab] hover:bg-[#2ca4ab]'>قراءة <FontAwesomeIcon icon={faBook} className='mr-1' /></a>
+                    <a href={url} rel='noreferrer' target='_blank' className='text-right flex items-center gap-1 hover:text-[#2ca4ab] font-bold px-3 py-2 rounded-sm book--buttons text-[#2ca4ab] hover:bg-[#2ca4ab]'>قراءة <FaBook /></a>
                 </div>
             </div>
         </InViewAnimate>

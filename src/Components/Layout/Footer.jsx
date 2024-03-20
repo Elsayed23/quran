@@ -1,45 +1,18 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { socialData } from '../../constants';
 
 
 const Footer = () => {
 
-    const currYear = new Date().getFullYear()
-
-    const socialData = [
-        {
-            name:
-                'whatsapp',
-            icon:
-                faWhatsapp,
-            url: 'https://wa.me/+201152989114'
-        },
-        {
-            name:
-                'github',
-            icon: faGithub,
-            url:
-                'https://github.com/Elsayed23'
-        },
-        {
-            name:
-                'linkedin',
-            icon: faLinkedin,
-            url:
-                'https://www.linkedin.com/in/el-sayed-kewan-48565a26b/'
-        }
-    ]
-
     return (
         <footer className='border-t-2 py-6'>
             <div className="flex flex-col items-center gap-4 sm:gap-0 sm:flex-row sm:justify-around">
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
                     {
                         socialData.map((social, idx) => {
                             return (
-                                <a key={idx} href={social.url} className='group block' target='_blank'>
-                                    <FontAwesomeIcon icon={social.icon} className='group-hover:text-[#2ca4ab] duration-300' fontSize={25} />
+                                <a key={idx} href={social.url} rel='noreferrer' className='group block' target='_blank'>
+                                    <social.icon size={27} />
                                 </a>
                             )
                         })

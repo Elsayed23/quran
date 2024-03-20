@@ -1,5 +1,5 @@
 import React from 'react';
-import arabicNumbers from '../../arabicNumbers';
+import { arabicNumbers } from '../../constants';
 import { motion } from 'framer-motion';
 
 const SajdaSurah = ({ text, surah: { name }, sajda: { id }, page, numberInSurah }) => {

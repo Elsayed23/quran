@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IoArrowUp } from "react-icons/io5";
 
 const BackToTop = () => {
      const [isHidden, setIsHidden] = React.useState(true)
@@ -13,13 +12,8 @@ const BackToTop = () => {
           });
      };
 
-     const handleScroll = () => {
-          if (window.scrollY > 250) {
-               setIsHidden(false);
-          } else {
-               setIsHidden(true);
-          }
-     };
+     const handleScroll = () => window.scrollY > 250 ? setIsHidden(false) : setIsHidden(true)
+
      React.useEffect(() => {
           window.addEventListener('scroll', handleScroll);
           return () => window.removeEventListener('scroll', handleScroll);
@@ -44,7 +38,7 @@ const BackToTop = () => {
                }}
                onClick={scrollToTop}
           >
-               <FontAwesomeIcon icon={faArrowUp} className='text-xl' />
+               <IoArrowUp size={25} />
           </motion.div>
 
      )

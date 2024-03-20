@@ -1,21 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import Ayat from './Ayat';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SEO from '../other/SEO';
 import Loading from '../other/Loading';
 import { Select, Option } from "@material-tailwind/react";
 import ProgressBar from '../other/ProgressBar';
 import besmAllah from '../besmAllah.svg'
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion'
 import Download from './Download';
-
+import PlayButton from '../other/PlayButton';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const SurahDetails = () => {
 
-    console.log("الحمد لله");
 
     const { id } = useParams()
 
@@ -24,7 +21,7 @@ const SurahDetails = () => {
     const [revelationType, setRevelationType] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
     const [sheikh, setSheikh] = React.useState('المنشاوي');
-    const [sheikhImg, setSheikhImg] = React.useState(require('../../assets/images/Elminshwey.jpg'))
+    // const [sheikhImg, setSheikhImg] = React.useState(require('../../assets/images/Elminshwey.jpg'))
     const [isPlaying, setIsPlaying] = React.useState(false)
     const [isEnded, setIsEnded] = React.useState(false)
     const [audio, setAudio] = React.useState(`https://download.quranicaudio.com/qdc/siddiq_minshawi/murattal/${id}.mp3`);
@@ -32,22 +29,14 @@ const SurahDetails = () => {
 
     const audioRef = React.useRef(null);
 
-    // Pause surah if ended
     React.useEffect(() => {
         isEnded && setIsPlaying(false)
     }, [isEnded])
 
+
     React.useEffect(() => {
         isPlaying ? audioRef.current?.play() : audioRef.current?.pause()
-    }, [isPlaying])
 
-
-    React.useEffect(() => {
-        setIsPlaying(false)
-    }, [sheikh])
-
-    // Pause other playing audio elements when play surah
-    React.useEffect(() => {
         const handleAudioState = () => {
             if (isPlaying) {
                 document.querySelectorAll("audio").forEach((audio) => {
@@ -63,19 +52,38 @@ const SurahDetails = () => {
         };
 
         handleAudioState();
-    }, [isPlaying]);
+    }, [isPlaying])
 
-    async function getAyat() {
+    React.useEffect(() => {
+        setIsPlaying(false)
+    }, [sheikh])
+
+
+    React.useEffect(() => {
+        const handleKeyPress = (event) => {
+            if (event.code === 'Space') {
+                setIsPlaying(prev => !prev);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
+
+    const getAyat = async () => {
 
         try {
-            const { data } = await axios.get(`https://api.alquran.cloud/v1/surah/${id}`)
+            const { data: { data } } = await axios.get(`https://api.quran.gading.dev/surah/${id}`)
 
-            const { ayahs, revelationType, name } = data.data
+            const { verses, revelation: { en }, name: { short } } = data
 
-            revelationType === 'Meccan' ? setRevelationType('مكية') : setRevelationType('مدنية')
-
-            setAya(ayahs)
-            setSurah(name)
+            en === 'Medinan' ? setRevelationType('مدنية') : setRevelationType('مكية')
+            setAya(verses)
+            setSurah(short)
             setLoading(false)
 
         } catch (error) {
@@ -84,9 +92,20 @@ const SurahDetails = () => {
 
     }
 
-    function handleChange(value) {
-        setSheikh(value)
-    }
+
+    // Important
+    // const getSurahPerPage = aya?.reduce((result, item) => {
+    //     const pageNumber = item.meta.page;
+    //     const verse = item.text.arab;
+
+    //     if (result[pageNumber]) {
+    //         result[pageNumber].push(verse);
+    //     } else {
+    //         result[pageNumber] = [verse];
+    //     }
+
+    //     return result;
+    // }, {});
 
 
     const surahsCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]
@@ -288,10 +307,13 @@ const SurahDetails = () => {
             setSheikh('المنشاوي')
             setSingleAyahs('https://everyayah.com/data/Yasser_Ad-Dussary_128kbps/')
         }
-
+        setLoading(true)
         getAyat()
         setIsPlaying(false)
     }, [id])
+
+
+
 
     React.useEffect(() => {
         recitations.map((recitation) => {
@@ -299,18 +321,17 @@ const SurahDetails = () => {
                 if (recitation.surahList.includes(+id)) {
                     setAudio(recitation.audio)
                 }
-                setSheikhImg(recitation.img)
+                // setSheikhImg(recitation.img)
             }
-
         })
     }, [sheikh, id])
 
-    const ayat = aya?.map(aya => {
+    const ayat = aya?.map((aya, idx) => {
+
         return (
-            <Ayat key={aya.number} singleAyahs={singleAyahs} id={id} setIsPlayingSurah={setIsPlaying}  {...aya} />
+            <Ayat key={idx} singleAyahs={singleAyahs} id={id} setIsPlayingSurah={setIsPlaying} {...aya} />
         )
     })
-
 
     return (
         loading
@@ -318,21 +339,35 @@ const SurahDetails = () => {
             <Loading />
             :
             <>
-                <SEO title={surah} desc='xplore the Quran online - Listen to beautiful recitations, read the complete Quranic text, and deepen your understanding of Islamic teachings. Our Quran page provides a digital gateway to spiritual enlightenment.' />
-                <div className="before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:z-[-9]">
-                    <img src={sheikhImg} className='fixed w-full h-full -z-10' alt="sheikh" />
-                </div>
+                <SEO title={surah}
+                    desc='xplore the Quran online - Listen to beautiful recitations, read the complete Quranic text, and deepen your understanding of Islamic teachings. Our Quran page provides a digital gateway to spiritual enlightenment.'
+                />
+                {/* <div
+                    className="before:fixed before:w-full before:h-full before:bg-[#000000e6] before:left-0 before:top-0 before:z-[-9]"
+                >
+                    <img
+                        src={sheikhImg}
+                        className='fixed w-full h-full -z-10'
+                        alt="sheikh"
+                    />
+                </div> */}
                 <ProgressBar />
-                <div className='pt-10 sm:pt-16 pb-5 sm:pb-7 px-4 container mx-auto'>
-                    <div className="revelationType fixed top-[80px] rounded-bl-md md:top-[77px] right-0 px-3 py-1 bg-[#2ca4ab] z-40">
+                <div
+                    className='pt-10 sm:pt-16 pb-5 sm:pb-7 px-4 container mx-auto'>
+                    <div
+                        className="revelationType absolute w-fit top-[120px] rounded-bl-md md:top-[117px] right-0 px-3 py-1 bg-[#2ca4ab] z-20">
                         {revelationType}
                     </div>
-                    <div className="flex flex-col items-center gap-6 mb-20">
-                        <h1 className='font-[surahnames] text-4xl md:text-5xl'>{handleSurahNum}surah</h1>
-                        <img src={besmAllah} alt="" />
+                    <div
+                        className="flex flex-col items-center gap-6 mb-6 md:mb-20">
+                        <h1
+                            className='font-[surahnames] text-4xl md:text-5xl'>{handleSurahNum}surah</h1>
+                        <img
+                            src={besmAllah} alt="besmAllah" />
                     </div>
-                    <div className="w-72 mb-5 select">
-                        <Select color='blue-gray' onChange={handleChange} animate={{ mount: { y: 0 }, unmount: { y: 25 } }} label='القارئ' variant='standard' value={sheikh} className='text-white'>
+                    <div
+                        className="w-72 mb-5 select">
+                        <Select color='blue-gray' onChange={(value) => { setSheikh(value) }} animate={{ mount: { y: 0 }, unmount: { y: 25 } }} label='القارئ' variant='standard' value={sheikh} className='text-white'>
                             {
                                 recitations.map((recitation, idx) => {
                                     return (
@@ -346,27 +381,19 @@ const SurahDetails = () => {
                                                 recitation.name
                                             }
                                         </Option>
-
                                     )
                                 })
                             }
                         </Select>
                     </div>
-                    <div className="flex justify-between mb-9">
+                    <div className="flex justify-between mb-9 items-center">
                         <div>
                             <audio
                                 ref={audioRef}
                                 onEnded={() => { setIsEnded(true) }}
                                 src={audio}
                             />
-                            <motion.div
-                                whileTap={{ scale: .95 }}
-                                onClick={() => { setIsPlaying(prev => !prev) }}
-                                className="toggleAudio flex items-center gap-3 cursor-pointer px-4 py-2 text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm"
-                            >
-                                {isPlaying ? 'Pause' : 'Play'} Audio
-                                {isPlaying ? <FontAwesomeIcon icon={faPause} size='sm' /> : <FontAwesomeIcon icon={faPlay} size='sm' />}
-                            </motion.div>
+                            <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
                         </div>
                         <Download
                             url={audio}
@@ -381,21 +408,21 @@ const SurahDetails = () => {
                                 : 'ياسر الدوسري'
                         }
                     />
-                    <ol className='flex flex-col mb-5 sm:mb-7'>
+                    <ul className='flex flex-col mb-5 sm:mb-7'>
                         {ayat}
-                    </ol>
+                    </ul>
                     <div dir='ltr' className="grid grid-cols-2">
                         <Link
                             to={`/surahDetails/${id > 1 ? +id - 1 : 1}`}
-                            className='previous_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm'
+                            className={`previous_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id > 1 ? 'visible' : 'invisible'}`}
                         >
-                            {id > 1 ? 'Previous Surah' : 'First Surah'}
+                            السورة السابقة
                         </Link>
                         <Link
                             to={`/surahDetails/${id < 114 ? +id + 1 : 114}`}
-                            className='next_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm'
+                            className={`next_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id < 114 ? 'visible' : 'invisible'}`}
                         >
-                            {id < 114 ? 'Next Surah' : 'Last Surah'}
+                            السورة التالية
                         </Link>
                     </div>
                 </div>

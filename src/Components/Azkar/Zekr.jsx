@@ -5,9 +5,7 @@ import SecTitle from '../other/SecTitle';
 import List from './ZekrList'
 import ProgressBar from '../other/ProgressBar';
 import adhkar from '../../adhkar.json'
-import { motion } from 'framer-motion';
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PlayButton from '../other/PlayButton';
 
 
 const Zekr = () => {
@@ -37,16 +35,10 @@ const Zekr = () => {
 
     const audioRef = React.useRef(null);
 
-    const handlePlaySurah = async () => {
-        try {
-            await audioRef.current.play()
-        } catch (error) {
 
-        }
-    };
-
-    // Pause other playing audio elements when play surah
     React.useEffect(() => {
+        isPlaying ? audioRef.current?.play() : audioRef.current?.pause()
+
         const handleAudioState = () => {
             if (isPlaying) {
                 document.querySelectorAll("audio").forEach((audio) => {
@@ -66,35 +58,16 @@ const Zekr = () => {
 
     const zekrName = getZerk[0].category
 
-    const handlePauseSurah = async () => {
-        try {
-            await audioRef.current.pause()
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
 
     return (
         <>
             <SEO title={zekrName} desc='Immerse yourself in the serene world of remembrances. Our Azkar page offers a collection of morning and evening supplications, fostering a mindful and spiritual atmosphere. Start and end your day with these beautiful Azkar to bring tranquility to your heart and soul.' />
             <ProgressBar />
-            <div className='py-14 px-4 md:px-16'>
+            <div className='py-14 px-4 md:px-16 min-h-[calc(100vh-194px)]'>
                 <SecTitle title={zekrName} />
                 <div className='flex gap-4 mb-9'>
-                    <audio ref={audioRef} onEnded={() => { setIsEnded(true) }} src={require(`../../assets/audio/${getZerk[0].filename}.mp3`)} />
-                    <motion.div whileTap={{ scale: .9 }} onClick={() => { setIsPlaying(prev => !prev) }} className="toggleAudio cursor-pointer px-4 py-2 text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm">
-                        <div className='flex items-center gap-3' onClick={isPlaying ? handlePauseSurah : handlePlaySurah}>
-                            {isPlaying ? 'Pause' : 'Play'} Audio
-                            {
-                                isPlaying
-                                    ?
-                                    <FontAwesomeIcon icon={faPause} size='sm' />
-                                    :
-                                    <FontAwesomeIcon icon={faPlay} size='sm' />
-                            }
-                        </div>
-                    </motion.div>
+                    <audio ref={audioRef} onEnded={() => { setIsEnded(true) }} src={isPlaying ? require(`../../assets/audio/${getZerk[0].filename}.mp3`) : ''} />
+                    < PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
                 </div>
                 <ul className='flex flex-col gap-8 text-xl md:text-3xl leading-normal'>
                     {zekr}
