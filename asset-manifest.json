@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/quran/static/css/main.9cd1c1a7.css",
-    "main.js": "/quran/static/js/main.1a27e0ee.js",
+    "main.css": "/quran/static/css/main.091d3952.css",
+    "main.js": "/quran/static/js/main.e97e40ea.js",
     "static/media/4.mp3": "/quran/static/media/4.b8058b3eb7cffb722284.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_028.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_028.6637078cec915a536bb0.mp3",
-    "static/media/ramadan.jpg": "/quran/static/media/ramadan.507a240b5e375a664c35.jpg",
     "static/media/ar_7esn_AlMoslem_by_Doors_029.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_029.f70e13d82642f507ffc9.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_002.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_002.6a29280672df44c8dbc7.mp3",
     "static/media/ar_7esn_AlMoslem_by_Doors_026.mp3": "/quran/static/media/ar_7esn_AlMoslem_by_Doors_026.71f77627cf8db0155bc9.mp3",
@@ -262,11 +261,11 @@
     "static/media/Abd_El_Basset.jpg": "/quran/static/media/Abd_El_Basset.88c09e62530ee8c37c79.jpg",
     "static/media/QuranSVG.svg": "/quran/static/media/QuranSVG.2ab2793ed28d13d89e035c049658d1e7.svg",
     "index.html": "/quran/index.html",
-    "main.9cd1c1a7.css.map": "/quran/static/css/main.9cd1c1a7.css.map",
-    "main.1a27e0ee.js.map": "/quran/static/js/main.1a27e0ee.js.map"
+    "main.091d3952.css.map": "/quran/static/css/main.091d3952.css.map",
+    "main.e97e40ea.js.map": "/quran/static/js/main.e97e40ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cd1c1a7.css",
-    "static/js/main.1a27e0ee.js"
+    "static/css/main.091d3952.css",
+    "static/js/main.e97e40ea.js"
   ]
 }
