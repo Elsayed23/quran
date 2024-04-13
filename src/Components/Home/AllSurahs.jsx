@@ -71,7 +71,7 @@ const Home = () => {
                             </div>
                         </div>
                     </motion.div>
-                    <div className="container mx-auto py-5 border-t border-[#464b50] min-h-[calc(100vh-668.88px)]">
+                    <div className="container mx-auto py-5 border-t border-white min-h-[calc(100vh-668.88px)]">
                         <div className="pb-3 text-xs flex gap-1">
                             رتب:
                             <div className="flex items-center gap-2 font-bold cursor-pointer " onClick={handleSort}>

@@ -15,7 +15,7 @@ const DrawerDefault = ({ open, setOpen }) => {
      const links = navLinks.map(link => {
           return (
                <li key={link.id}>
-                    <Link to={link.url} className={`nav--item block py-3 border-t border-t-[#464b50] text-[#e7e9ea] hover:text-opacity-60 duration-100`}>{link.name}</Link>
+                    <Link to={link.url} className={`nav--item block py-3 border-t border-t-white text-[#e7e9ea] hover:text-opacity-60 duration-100`}>{link.name}</Link>
                </li>
           )
      })
@@ -23,7 +23,7 @@ const DrawerDefault = ({ open, setOpen }) => {
 
      return (
           <React.Fragment>
-               <Drawer open={open} onClose={closeDrawer} className="py-4 px-6 top-10 bg-transparent backdrop-blur-lg text-[#e7e9ea]" placement='right' overlay={false}>
+               <Drawer open={open} onClose={closeDrawer} className="py-4 px-6 top-10 backdrop-blur-2xl bg-transparent text-[#e7e9ea]" placement='right' overlay={false}>
                     <div className="mb-6 flex items-center justify-between">
                          <Typography variant="h5">
                               Quran

@@ -8,7 +8,7 @@ const Surah = ({ number, englishName, numberOfAyahs, revelationType }) => {
 
 
     const handleSurahNum = number < 10 ? `00${number}` : number >= 10 && number < 100 ? `0${number}` : number;
-
+    // 464b50
     return (
         <Link to={`/surahDetails/${number}`} className='group'>
             <InViewAnimate id={number} className='py-[16px] px-[19px] border border-[#464b50] hover:border-[#2ca4ab] rounded-md' >
@@ -21,7 +21,7 @@ const Surah = ({ number, englishName, numberOfAyahs, revelationType }) => {
                                 <span className='text-[#777] text-xs group-hover:text-[#2ca4ab]'>{englishName}</span>
                             </div>
                         </div>
-                        <div className="flex flex-col text-white /text-[#777]/ group-hover:text-[#2ca4ab] text-sm font-bold items-center gap-1">
+                        <div className="flex flex-col text-[#777] group-hover:text-[#2ca4ab] text-sm font-bold items-center gap-1">
                             <span className=''>{numberOfAyahs} {numberOfAyahs < 10 ? 'آيات' : 'آية'}</span>
                             <hr className='w-full border-[#777] group-hover:border-white' />
                             <span>

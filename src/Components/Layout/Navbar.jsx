@@ -38,8 +38,8 @@ const NavBar = () => {
             <ScrollHandler />
             <Drawer open={isOpen} setOpen={setIsOpen} />
 
-            <nav id='navbar' className='duration-300 fixed backdrop-blur-lg top-10 w-full z-50'>
-                <div className="px-16 py-4 flex flex-wrap items-center justify-between mx-auto w-full">
+            <nav id='navbar' className='duration-300 fixed backdrop-blur-2xl top-10 w-full z-50'>
+                <div className="px-4 md:px-16 py-4 flex flex-wrap items-center justify-between mx-auto w-full">
                     <div className="p-2 rounded-full hover:bg-black hover:bg-opacity-15 cursor-pointer duration-200" onClick={openDrawer}>
                         <HiMiniBars3 size={28} color='#e7e9ea' />
                     </div>

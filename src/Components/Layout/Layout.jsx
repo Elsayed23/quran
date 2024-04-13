@@ -8,8 +8,6 @@ const Layout = ({ isOpen, setIsOpen }) => {
 
     console.log("اللهم علمنا ما ينفعنا، وانفعنا بما علمتنا، وزدنا علما");
 
-
-
     return (
         <>
             <div className='text-center fixed top-0 left-0 w-full py-2 bg-gradient-to-r from-teal-400 to-teal-600 z-[99]'>

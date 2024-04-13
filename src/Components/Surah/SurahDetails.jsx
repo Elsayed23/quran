@@ -414,13 +414,13 @@ const SurahDetails = () => {
                     <div dir='ltr' className="grid grid-cols-2">
                         <Link
                             to={`/surahDetails/${id > 1 ? +id - 1 : 1}`}
-                            className={`previous_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id > 1 ? 'visible' : 'invisible'}`}
+                            className={`previous_surah  py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id > 1 ? 'visible' : 'invisible'}`}
                         >
                             السورة السابقة
                         </Link>
                         <Link
                             to={`/surahDetails/${id < 114 ? +id + 1 : 114}`}
-                            className={`next_surah py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id < 114 ? 'visible' : 'invisible'}`}
+                            className={`next_surah  py-3 px-5 text-center text-[#2ca4ab] hover:bg-[#2ca4ab] rounded-sm ${id < 114 ? 'visible' : 'invisible'}`}
                         >
                             السورة التالية
                         </Link>

@@ -190,8 +190,8 @@ const PrayerTimes = () => {
             <>
                 <SEO title='مواقيت الصلاة' desc='Stay connected to your faith with accurate prayer timings. Our Prayer Timings page offers real-time schedules for Fajr, Dhuhr, Asr, Maghrib, and Isha prayers. Never miss a prayer and align your daily routine with Islamic practices.' />
                 <div className="py-14 px-4 md:px-16 min-h-[calc(100vh-194px)]">
-                    <SecTitle title='مَوَاقِيتُ ٱلصَّلَاةَ' className='mb-[0!important]' />
-                    <div className='h-[calc(100vh-390.76px)] flex flex-col justify-center pb-10'>
+                    <SecTitle title='مَوَاقِيتُ ٱلصَّلَاةَ' className='lg:mb-[0!important]' />
+                    <div className='lg:h-[calc(100vh-390.76px)] flex flex-col justify-center pb-10'>
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: .8 } }} className="flex items-center justify-around lg:gap-0 gap-6 flex-col lg:flex-row mb-10">
                             <h5 className='text-xl'>{currDay.ar} {currDayNumAndMonth.number} {currDayNumAndMonth.ar} {currYear.hijri} | {currTime}</h5>
                             <h1 className='text-3xl flex gap-2 sm:flex-row flex-col items-center'>متبقي علي صلاة  {prayersArray[nextPrayerIndex].displayName} <span className='font-bold'>{remainingTime}</span></h1>

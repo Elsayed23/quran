@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
     return (
-        <div className="h-[calc(100vh-199.95px)] sm:h-[calc(100vh-197.4px)] flex justify-center items-center relative top-0 z-50 w-full bg-transparent">
+        <div className="h-[calc(100vh-199.95px)] sm:h-[calc(100vh-194px)] flex justify-center items-center relative top-0 z-50 w-full bg-transparent">
             <div className="loader relative w-[70px] h-[70px] rounded-[10px]">
                 <div className="bar1 w-[8%] h-[24%] bg-white absolute left-2/4 top-[30%] opacity-0 rounded-[50px]" style={{ transform: 'rotate(0deg) translate(0, -130%)', animationDelay: '0s' }}></div>
                 <div className="bar2 w-[8%] h-[24%] bg-white absolute left-2/4 top-[30%] opacity-0 rounded-[50px]" style={{ transform: 'rotate(30deg) translate(0, -130%)', animationDelay: '-1.1s' }}></div>
