@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import Ayat from './Ayat';
 import { useParams } from 'react-router-dom';
@@ -16,25 +16,25 @@ const SurahDetails = () => {
 
     const { id } = useParams()
 
-    const [aya, setAya] = React.useState(null)
-    const [surah, setSurah] = React.useState(null)
-    const [revelationType, setRevelationType] = React.useState(null);
-    const [loading, setLoading] = React.useState(true);
-    const [sheikh, setSheikh] = React.useState('المنشاوي');
-    // const [sheikhImg, setSheikhImg] = React.useState(require('../../assets/images/Elminshwey.jpg'))
-    const [isPlaying, setIsPlaying] = React.useState(false)
-    const [isEnded, setIsEnded] = React.useState(false)
-    const [audio, setAudio] = React.useState(`https://download.quranicaudio.com/qdc/siddiq_minshawi/murattal/${id}.mp3`);
-    const [singleAyahs, setSingleAyahs] = React.useState('https://everyayah.com/data/Yasser_Ad-Dussary_128kbps/')
+    const [aya, setAya] = useState(null)
+    const [surah, setSurah] = useState(null)
+    const [revelationType, setRevelationType] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [sheikh, setSheikh] = useState('المنشاوي');
+    // const [sheikhImg, setSheikhImg] = useState(require('../../assets/images/Elminshwey.jpg'))
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [isEnded, setIsEnded] = useState(false)
+    const [audio, setAudio] = useState(`https://download.quranicaudio.com/qdc/siddiq_minshawi/murattal/${id}.mp3`);
+    const [singleAyahs, setSingleAyahs] = useState('https://everyayah.com/data/Yasser_Ad-Dussary_128kbps/')
 
-    const audioRef = React.useRef(null);
+    const audioRef = useRef(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         isEnded && setIsPlaying(false)
     }, [isEnded])
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         isPlaying ? audioRef.current?.play() : audioRef.current?.pause()
 
         const handleAudioState = () => {
@@ -54,12 +54,8 @@ const SurahDetails = () => {
         handleAudioState();
     }, [isPlaying])
 
-    React.useEffect(() => {
-        setIsPlaying(false)
-    }, [sheikh])
 
-
-    React.useEffect(() => {
+    useEffect(() => {
         const handleKeyPress = (event) => {
             if (event.code === 'Space') {
                 setIsPlaying(prev => !prev);
@@ -299,7 +295,7 @@ const SurahDetails = () => {
         },
     ]
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (recitations[1].surahList.includes(+id)) {
             setSheikh('حموده عثمان')
             setSingleAyahs('https://ia801200.us.archive.org/3/items/001007_202312/')
@@ -313,18 +309,17 @@ const SurahDetails = () => {
     }, [id])
 
 
-
-
-    React.useEffect(() => {
+    const handleSelectChange = (value) => {
         recitations.map((recitation) => {
-            if (recitation.name === sheikh) {
+            if (recitation.name === value) {
                 if (recitation.surahList.includes(+id)) {
                     setAudio(recitation.audio)
                 }
                 // setSheikhImg(recitation.img)
             }
         })
-    }, [sheikh, id])
+        setIsPlaying(false)
+    }
 
     const ayat = aya?.map((aya, idx) => {
 
@@ -367,7 +362,7 @@ const SurahDetails = () => {
                     </div>
                     <div
                         className="w-72 mb-5 select">
-                        <Select color='blue-gray' onChange={(value) => { setSheikh(value) }} animate={{ mount: { y: 0 }, unmount: { y: 25 } }} label='القارئ' variant='standard' value={sheikh} className='text-white'>
+                        <Select color='blue-gray' onChange={handleSelectChange} animate={{ mount: { y: 0 }, unmount: { y: 25 } }} label='القارئ' variant='standard' value={sheikh} className='text-white flex flex-col gap-3'>
                             {
                                 recitations.map((recitation, idx) => {
                                     return (

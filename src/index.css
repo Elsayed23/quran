@@ -63,6 +63,10 @@ body {
     background-image: linear-gradient(to right, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75));
 }
 
+.select ul li {
+    margin-bottom: 8px;
+}
+
 .select ul li:hover,
 .select ul li[data-selected='true'] {
     background-color: #2ca4ab;
