@@ -1,9 +1,9 @@
 import React from 'react';
 import AsmaList from './AsmaList';
-import SecTitle from '../other/SecTitle';
-import SEO from '../other/SEO';
-import Loading from '../other/Loading';
-import ProgressBar from '../other/ProgressBar';
+import SecTitle from '../../components/other/SecTitle';
+import SEO from '../../components/other/SEO';
+import Loading from '../../components/other/Loading';
+import ProgressBar from '../../components/other/ProgressBar';
 import { asmaAlHusnaData } from '../../constants';
 
 const AsmaAlHusna = () => {

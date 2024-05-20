@@ -1,16 +1,17 @@
 import React from 'react';
-import Layout from './Components/Layout/Layout';
-import Home from './Components/Home/AllSurahs';
-import PrayerTimes from './Components/PrayerTimes/PrayerTimes'
+import Layout from './components/Layout/Layout';
+import Home from './routes/home/AllSurahs';
+import PrayerTimes from './routes/prayerTimes/PrayerTimes'
 import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
-import SurahDetails from './Components/Surah/SurahDetails';
-import AsmaAlHusna from './Components/AsamaAlHusna/AsmaAlHusna';
-import Sajda from './Components/Sajda/Sajda'
-import Books from './Components/Books/Books'
-import Zekr from './Components/Azkar/Zekr';
-import NotFound from './Components/other/NotFound';
-import Azkar from './Components/Azkar/Azkar';
-import Verse from './Components/verse/Verse';
+import SurahDetails from './routes/surah/SurahDetails';
+import AsmaAlHusna from './routes/asamaAlHusna/AsmaAlHusna';
+import Sajda from './routes/sajda/Sajda'
+import Books from './routes/books/Books'
+import Zekr from './routes/azkar/Zekr';
+import NotFound from './components/other/NotFound';
+import Azkar from './routes/azkar/Azkar';
+import Verse from './routes/verse/Verse';
+import DownloadMoshaf from './routes/downloadMoshaf/DownloadMoshaf'
 
 
 const App = () => {
@@ -19,14 +20,15 @@ const App = () => {
     {
       path: '', element: <Layout />, children: [
         { path: '/', element: <Home /> },
-        { path: 'PrayerTimes', element: <PrayerTimes /> },
-        { path: 'surahDetails/:id', element: <SurahDetails /> },
+        { path: 'prayer_times', element: <PrayerTimes /> },
+        { path: 'surah_details/:id', element: <SurahDetails /> },
         { path: 'verse/:surahId/:verseId', element: <Verse /> },
-        { path: 'asmaAlHusna', element: <AsmaAlHusna /> },
+        { path: 'asma_alHusna', element: <AsmaAlHusna /> },
         { path: 'sajda', element: <Sajda /> },
         { path: 'books', element: <Books /> },
         { path: 'adhkar', element: <Azkar /> },
         { path: 'zekr/:id', element: <Zekr /> },
+        { path: 'quran_download', element: <DownloadMoshaf /> },
       ]
     },
     { path: '*', element: <NotFound /> },

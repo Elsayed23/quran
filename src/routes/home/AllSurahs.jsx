@@ -1,11 +1,11 @@
 import React from 'react';
 import Surah from './Surah';
-import SEO from '../other/SEO';
-import Loading from '../other/Loading';
-import QName from '../QuranSVG.svg'
+import SEO from '../../components/other/SEO';
+import Loading from '../../components/other/Loading';
+import ProgressBar from '../../components/other/ProgressBar';
+import QName from '../../assets/images/QuranSVG.svg'
 import { Input } from '@material-tailwind/react';
 import { IoChevronUp } from "react-icons/io5";
-import ProgressBar from '../other/ProgressBar';
 import { easeInOut, motion } from 'framer-motion';
 import { simplifyArabic, surahsData } from '../../constants';
 import QuickSurah from './QuickSurah';
@@ -80,7 +80,7 @@ const Home = () => {
                             </div>
                         </div>
                         {
-                            suraH?.length
+                            suraH.length
                                 ?
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                                     {suraH}

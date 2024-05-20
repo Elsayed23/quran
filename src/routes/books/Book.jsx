@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBook } from "react-icons/fa";
-import InViewAnimate from '../other/InViewAnimate'
+import InViewAnimate from '../../components/other/InViewAnimate'
 
 const Book = ({ title, description, attachments: [{ url }] }) => {
 

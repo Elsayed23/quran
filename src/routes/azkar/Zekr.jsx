@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import SEO from '../other/SEO';
-import SecTitle from '../other/SecTitle';
+import SecTitle from '../../components/other/SecTitle';
+import SEO from '../../components/other/SEO';
+import ProgressBar from '../../components/other/ProgressBar';
 import List from './ZekrList'
-import ProgressBar from '../other/ProgressBar';
 import adhkar from '../../adhkar.json'
-import PlayButton from '../other/PlayButton';
+import PlayButton from '../../components/other/PlayButton';
 
 
 const Zekr = () => {

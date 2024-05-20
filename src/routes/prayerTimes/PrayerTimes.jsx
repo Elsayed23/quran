@@ -1,9 +1,9 @@
 import React from 'react';
-import SEO from '../other/SEO';
-import SecTitle from '../other/SecTitle';
+import SEO from '../../components/other/SEO';
+import SecTitle from '../../components/other/SecTitle';
 import axios from 'axios';
 import PrayerBox from './PrayerBox'
-import Loading from '../other/Loading';
+import Loading from '../../components/other/Loading';
 // import Prostrationimage from '../../assets/images/prostration.jpg'
 import moment from 'moment';
 import { easeInOut, motion } from 'framer-motion';

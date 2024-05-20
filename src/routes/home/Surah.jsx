@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { arabicNumbers } from '../../constants';
-import InViewAnimate from '../other/InViewAnimate';
+import InViewAnimate from '../../components/other/InViewAnimate';
 
 const Surah = ({ number, englishName, numberOfAyahs, revelationType }) => {
 
@@ -10,7 +10,7 @@ const Surah = ({ number, englishName, numberOfAyahs, revelationType }) => {
     const handleSurahNum = number < 10 ? `00${number}` : number >= 10 && number < 100 ? `0${number}` : number;
     // 464b50
     return (
-        <Link to={`/surahDetails/${number}`} className='group'>
+        <Link to={`/surah_details/${number}`} className='group'>
             <InViewAnimate id={number} className='py-[16px] px-[19px] border border-[#464b50] hover:border-[#2ca4ab] rounded-md' >
                 <motion.div whileTap={{ scale: .9 }}>
                     <div className='flex justify-between items-center'>

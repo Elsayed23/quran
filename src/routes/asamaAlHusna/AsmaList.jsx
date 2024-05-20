@@ -1,5 +1,5 @@
 import React from 'react';
-import InViewAnimate from '../other/InViewAnimate';
+import InViewAnimate from '../../components/other/InViewAnimate';
 import { arabicNumbers } from '../../constants';
 
 const AsmaList = ({ name, transliteration, number }) => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import SEO from '../other/SEO'
-import SecTitle from '../other/SecTitle';
 import SajdaSurah from './SajdaSurah';
-import Loading from '../other/Loading';
-import ProgressBar from '../other/ProgressBar';
+import SecTitle from '../../components/other/SecTitle';
+import SEO from '../../components/other/SEO';
+import Loading from '../../components/other/Loading';
+import ProgressBar from '../../components/other/ProgressBar';
 // import bgImage from '../../assets/images/sajda.webp'
 import { sajdaData } from '../../constants';
 

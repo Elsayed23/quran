@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Ayat from '../Surah/Ayat'
+import Ayat from '../surah/Ayat'
 import { Button } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
-import Loading from '../other/Loading'
+import Loading from '../../components/other/Loading'
 
 const Verse = () => {
 

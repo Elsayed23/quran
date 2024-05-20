@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 const QuickSurah = () => {
 
      return (
-          quickSurahsData.map(surah => {
+          quickSurahsData.map(({ surahId, surahName, y }, idx) => {
                return (
                     <motion.div
                          initial={{
                               opacity: 0,
-                              y: surah.y
+                              y: y
                          }}
                          animate={{
                               opacity: 1,
@@ -20,9 +20,9 @@ const QuickSurah = () => {
 
                          }}
                          whileTap={{ scale: .9 }}
-                         key={surah.id}>
-                         <Link to={`/surahDetails/${surah.surahId}`} className='bg-white px-4 py-1 text-[#272727] rounded-full block'>
-                              {surah.surahName}
+                         key={idx}>
+                         <Link to={`/surah_details/${surahId}`} className='bg-white px-4 py-1 text-[#272727] rounded-full block'>
+                              {surahName}
                          </Link>
                     </motion.div>
                )

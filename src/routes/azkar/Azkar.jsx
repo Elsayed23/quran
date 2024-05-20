@@ -1,11 +1,11 @@
 import React from 'react'
 import adhkar from '../../adhkar.json'
-import SecTitle from '../other/SecTitle'
+import SecTitle from '../../components/other/SecTitle';
+import SEO from '../../components/other/SEO';
+import ProgressBar from '../../components/other/ProgressBar';
 import { Link } from 'react-router-dom'
-import ProgressBar from '../other/ProgressBar'
-import SEO from '../other/SEO'
 import { motion } from 'framer-motion'
-import InViewAnimate from '../other/InViewAnimate'
+import InViewAnimate from '../../components/other/InViewAnimate'
 
 const Adhkar = () => {
 

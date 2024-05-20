@@ -12,10 +12,10 @@ const DrawerDefault = ({ open, setOpen }) => {
 
      const closeDrawer = () => setOpen(false);
 
-     const links = navLinks.map(link => {
+     const links = navLinks.map(({ url, name }, idx) => {
           return (
-               <li key={link.id}>
-                    <Link to={link.url} className={`nav--item block py-3 border-t border-t-white text-[#e7e9ea] hover:text-opacity-60 duration-100`}>{link.name}</Link>
+               <li key={idx}>
+                    <Link to={url} className={`nav--item block py-3 border-t border-t-white text-[#e7e9ea] hover:text-opacity-60 duration-100`}>{name}</Link>
                </li>
           )
      })
