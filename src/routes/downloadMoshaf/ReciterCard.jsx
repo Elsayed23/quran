@@ -8,7 +8,7 @@ const ReciterCard = ({
 }) => {
      return (
           <div className='p-5 border rounded-sm flex flex-col gap-5 group'>
-               <div className="overflow-hidden w-[265px] h-[265px] rounded-full">
+               <div className="overflow-hidden w-[265px] h-[265px] rounded-full mx-auto">
                     <img src={img} alt="Reciter image" className='rounded-full group-hover:scale-110 duration-300 w-full h-full' />
                </div>
                <h3 className='text-center font-semibold'>{name}</h3>

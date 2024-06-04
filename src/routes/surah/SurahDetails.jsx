@@ -80,6 +80,7 @@ const SurahDetails = () => {
             const { verses, revelation: { en }, name: { short } } = data
 
             en === 'Medinan' ? setRevelationType('مدنية') : setRevelationType('مكية')
+            console.log(verses);
             setAya(verses)
             setSurah(short)
             setLoading(false)
@@ -114,6 +115,12 @@ const SurahDetails = () => {
             audio: `https://download.quranicaudio.com/quran/yasser_ad-dussary/${handleSurahNum}.mp3`,
             img: require('../../assets/images/Yasser_dusary.jpg'),
             surahList: surahsCount,
+        },
+        {
+            name: 'سلمان العتيبي',
+            audio: `https://server11.mp3quran.net/salman/${handleSurahNum}.mp3`,
+            img: require('../../assets/images/Salman_Al-Otaibi.jpg'),
+            surahList: [1, 2, 36, 46, 56, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114],
         },
         {
             name: 'عبد الباسط',
@@ -250,6 +257,20 @@ const SurahDetails = () => {
     ]
 
 
+
+
+
+    const handleSelectChange = async (value) => {
+        const selectedRecitation = recitationsData.find(recitation => recitation.name === value && recitation.surahList.includes(+id));
+
+        if (selectedRecitation) {
+            setAudio(() => selectedRecitation.audio);
+            setSheikh(() => selectedRecitation.name);
+        }
+
+        setIsPlaying(false);
+    }
+
     useEffect(() => {
         if (recitationsData[1].surahList.includes(+id)) {
             setSheikh('حموده عثمان')
@@ -265,25 +286,14 @@ const SurahDetails = () => {
         setIsPlaying(false)
     }, [id])
 
-
-    const handleSelectChange = async (value) => {
-        const selectedRecitation = recitationsData.find(recitation => recitation.name === value && recitation.surahList.includes(+id));
-
-        if (selectedRecitation) {
-            setAudio(() => selectedRecitation.audio);
-            setSheikh(() => selectedRecitation.name);
-        }
-
-        setIsPlaying(false);
-    }
-
     const ayat = useMemo(() => {
-        return aya?.map((aya, idx) => {
-            return (
-                <Ayat key={idx} singleAyahs={singleAyahs} id={id} setIsPlayingSurah={setIsPlaying} {...aya} />
-            )
-        })
-    }, [loading])
+        if (!Array.isArray(aya)) {
+            return [];
+        }
+        return aya.map((ayaItem, idx) => (
+            <Ayat key={idx} singleAyahs={singleAyahs} id={id} setIsPlayingSurah={setIsPlaying} {...ayaItem} />
+        ));
+    }, [aya, id, singleAyahs]);
 
     return (
         loading
@@ -345,19 +355,20 @@ const SurahDetails = () => {
                                 onEnded={() => { setIsEnded(true) }}
                                 src={audio}
                             />
-                            <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+                            <div className="flex flex-col items-start gap-4">
+                                <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+                                <Link to={{
+                                    pathname: '/quran_download',
+                                    search: `?sheikh=${sheikh}`
+                                }} className='underline cursor-pointer text-[#2ca4ab]'>(تحميل مصحف القارئ {sheikh})</Link>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <Link to={{
-                                pathname: '/quran_download',
-                                search: `?sheikh=${sheikh}`
-                            }} className='underline cursor-pointer text-[#2ca4ab]'>(تحميل مصحف القارئ {sheikh})</Link>
-                            <Download
-                                url={audio}
-                                surahName={surah}
-                                recitation={sheikh}
-                            />
-                        </div>
+
+                        <Download
+                            url={audio}
+                            surahName={surah}
+                            recitation={sheikh}
+                        />
                     </div>
                     <Alert
                         sheikh={
